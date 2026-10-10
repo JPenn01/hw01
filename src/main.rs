@@ -1,13 +1,12 @@
-use std::io::{self, Write};
 use rand::rngs::StdRng;
 use rand::{Rng, SeedableRng};
+use std::io::{self, Write};
 
 const START_GOLD: u64 = 100;
 const FOOD_PRICE: u64 = 5;
 const MAX_SEED: u64 = 9999;
 const CARAVAN_DICE: u64 = 3;
 const TRADE_MULTIPLIER: u64 = 2;
-
 
 fn print_menu() {
     println!("1. Buy food");
