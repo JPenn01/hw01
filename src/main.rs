@@ -10,8 +10,20 @@ fn can_afford(gold: u64, cost: u64) -> bool {
     gold >= cost
 }
 
+fn hunt_food(roll: u64) -> u64 {
+    if roll == 1 {
+        0
+    } else if roll <= 3 {
+        10
+    } else if roll <= 5 {
+        20
+    } else {
+        40
+    }
+}
+
 fn main() {
-    println!("{}", can_afford(10, 5));
-    println!("{}", can_afford(5, 5));
-    println!("{}", can_afford(4, 5));
+    for roll in 1..=6 {
+        println!("roll {} -> {}", roll, hunt_food(roll));
+    }
 }
