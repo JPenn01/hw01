@@ -46,9 +46,15 @@ fn roll_die(seed: u64) -> u64 {
     rng.random_range(1..=6)
 }
 
-fn main() {
-    for seed in 1..=10 {
-        println!("seed {} -> {}", seed, roll_die(seed));
+fn roll_many(seed: u64, count: u64) -> u64 {
+    let mut total = 0;
+    for i in 0..count {
+        total += roll_die(seed + i);
     }
-    println!("{} {}", roll_die(42), roll_die(42));
+    total
+}
+
+fn main() {
+    println!("{}", roll_many(1, 3));
+    println!("{}", roll_die(1) + roll_die(2) + roll_die(3));
 }
